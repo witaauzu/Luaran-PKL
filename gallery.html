@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bali Surf Lesson</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Trip+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <!-- Logo -->
+            <div class="logo">
+                <img src="assets/images/logo.png" alt="Bali Surf Lesson Logo">
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="index.html" class="nav-link active">Home</a></li>
+                    <li><a href="courses.html" class="nav-link">Courses</a></li>
+                    <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                    <li><a href="store.html" class="nav-link">Store</a></li>
+                </ul>
+            </nav>
+
+            <!-- Contact Button -->
+            <a href="https://wa.me/6281234567890?text=Hi! I'm interested in surf lessons" class="contact-btn" target="_blank">
+                CONTACT US
+            </a>
+
+            <!-- Mobile Menu Toggle -->
+            <div class="mobile-toggle" id="mobile-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Gallery SECTION -->
+    <section class="gallery-hero">
+    <div class="container">
+        <p class="section-label">GALLERY</p>
+        <h2 class="section-title">Best Moments on the Waves</h2>
+        <p class="section-desc">
+        Delve into the beauty of the world of surfing through our collection of photos and the best! From spectacular action on big waves to relaxing moments enjoying the sunset on the beach
+        </p>
+    </div>
+    </section>
+
+    <!-- Gallery GRID -->
+    <section class="gallery-section">
+    <div class="gallery-container">
+        <!-- 16 foto -->
+        <div class="gallery-item">
+        <a href="assets/images/gallery1.jpg" class="gallery-link">
+            <img src="assets/images/gallery1.jpg" alt="Gallery Image 1">
+        </a>
+        </div>
+        <div class="gallery-item">
+        <a href="assets/images/gallery2.jpg" class="gallery-link">
+            <img src="assets/images/gallery2.jpg" alt="Gallery Image 2">
+        </a>
+        </div>
+        <div class="gallery-item">
+        <a href="assets/images/gallery3.jpg" class="gallery-link">
+            <img src="assets/images/gallery3.jpg" alt="Gallery Image 3">
+        </a>
+        </div>
+        <div class="gallery-item">
+        <a href="assets/images/gallery4.jpg" class="gallery-link">
+            <img src="assets/images/gallery4.jpg" alt="Gallery Image 4">
+        </a>
+        </div>
+        <div class="gallery-item">
+        <a href="assets/images/gallery5.jpg" class="gallery-link">
+            <img src="assets/images/gallery5.jpg" alt="Gallery Image 4">
+        </a>
+        </div>
+        <div class="gallery-item">
+        <a href="assets/images/gallery6.jpg" class="gallery-link">
+            <img src="assets/images/gallery6.jpg" alt="Gallery Image 4">
+        </a>
+        </div>
+        <div class="gallery-item">
+        <a href="assets/images/gallery7.jpg" class="gallery-link">
+            <img src="assets/images/gallery7.jpg" alt="Gallery Image 4">
+        </a>
+        </div>
+        <div class="gallery-item">
+        <a href="assets/images/gallery8.jpg" class="gallery-link">
+            <img src="assets/images/gallery8.jpg" alt="Gallery Image 4">
+        </a>
+        </div>
+        <!-- lanjutkan sampai gallery16.jpg -->
+    </div>
+    </section>
+
+    <!-- Modal Lightbox -->
+    <div id="lightbox" class="lightbox">
+    <span class="lightbox-close">&times;</span>
+    <img class="lightbox-content" id="lightbox-img" alt="">
+    </div>
+
+    <script>
+    // ambil semua link gallery
+    const galleryLinks = document.querySelectorAll('.gallery-link');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const closeBtn = document.querySelector('.lightbox-close');
+
+    galleryLinks.forEach(link => {
+    link.addEventListener('click', e => {
+        e.preventDefault();
+        const imgSrc = link.getAttribute('href');
+        lightboxImg.src = imgSrc;
+        lightbox.style.display = 'block';
+    });
+    });
+
+    closeBtn.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+    });
+
+    // klik luar image untuk close
+    lightbox.addEventListener('click', e => {
+    if (e.target === lightbox) {
+        lightbox.style.display = 'none';
+    }
+    });
+    </script>
+
+
+    <!-- JavaScript -->
+    <script src="assets/js/main.js"></script>
+
+     <!-- Footer - Include dari component/footer.html -->
+    <footer class="footer">
+        <!-- Main Footer Content -->
+        <div class="footer-main">
+            <div class="footer-container">
+                <!-- Logo Section -->
+                <div class="footer-logo">
+                    <img src="assets/images/logo.png" alt="Bali Surf Lesson Logo">
+                </div>
+
+                <!-- Content Section - Quick Links + Contact Info berdekatan -->
+                <div class="footer-content">
+                    <!-- Quick Links -->
+                    <div class="footer-section">
+                        <h4>Quick Links</h4>
+                        <ul class="footer-links">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="courses.html">Courses</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="store.html">Store</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Contact Info -->
+                    <div class="footer-section">
+                        <h4>Contact Info</h4>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <svg class="contact-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M21 10C21 17 12 23 12 23S3 17 3 10C3 5.02944 7.02944 1 12 1C16.9706 1 21 5.02944 21 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <p>Jl. Pantai Kuta, Badung<br>Bali 80361, Indonesia</p>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <svg class="contact-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <p>info@balisurflesson.com</p>
+                            </div>
+                        </div>
+
+                        <!-- Social Media -->
+                        <div class="social-media">
+                            <a href="https://wa.me/6281234567890" target="_blank" class="social-link whatsapp">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M17.472 14.382C17.367 14.382 16.103 13.767 15.861 13.767C15.619 13.767 15.48 13.767 15.341 14.004C15.202 14.241 14.821 14.382 14.682 14.521C14.543 14.66 14.404 14.66 14.195 14.521C13.986 14.382 13.605 14.241 13.154 13.837C12.703 13.433 12.322 12.888 12.183 12.651C12.044 12.414 12.113 12.275 12.252 12.136C12.391 11.997 12.53 11.788 12.669 11.649C12.808 11.51 12.877 11.371 12.947 11.232C13.016 11.093 12.947 10.954 12.877 10.815C12.808 10.676 12.322 9.412 12.113 8.938C11.904 8.464 11.695 8.533 11.556 8.533C11.417 8.533 11.278 8.533 11.139 8.533C11 8.533 10.758 8.603 10.619 8.84C10.48 9.077 9.865 9.692 9.865 10.956C9.865 12.22 10.758 13.414 10.897 13.553C11.036 13.692 12.322 15.646 14.195 16.771C16.068 17.896 16.068 17.896 16.377 17.896C16.686 17.896 17.091 17.896 17.091 17.896C17.091 17.896 17.091 17.896 17.091 17.896C17.091 17.896 17.091 17.896 17.091 17.896C17.091 17.896 17.091 17.896 17.091 17.896" fill="currentColor"/>
+                                    <path d="M12 2C6.477 2 2 6.477 2 12C2 13.89 2.525 15.66 3.438 17.168L2.546 20.2C2.49 20.374 2.564 20.555 2.717 20.649C2.789 20.694 2.87 20.717 2.951 20.717C3.025 20.717 3.1 20.7 3.168 20.665L6.832 19.562C8.34 20.475 10.11 21 12 21C17.523 21 22 16.523 22 12C22 6.477 17.523 2 12 2ZM12 19.5C10.424 19.5 8.916 19.042 7.646 18.192L7.504 18.108L4.896 18.896L5.892 16.504L5.808 16.354C4.958 15.084 4.5 13.576 4.5 12C4.5 7.858 7.858 4.5 12 4.5C16.142 4.5 19.5 7.858 19.5 12C19.5 16.142 16.142 19.5 12 19.5Z" fill="currentColor"/>
+                                </svg>
+                            </a>
+
+                            <a href="https://instagram.com/jisurflessonbali" target="_blank" class="social-link instagram">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37Z" stroke="currentColor" stroke-width="2"/>
+                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                            </a>
+
+                            <a href="https://facebook.com/jisurflessonbali" target="_blank" class="social-link facebook">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M18 2H15C13.6739 2 12.4021 2.52678 11.4645 3.46447C10.5268 4.40215 10 5.67392 10 7V10H7V14H10V22H14V14H17L18 10H14V7C14 6.73478 14.1054 6.48043 14.2929 6.29289C14.4804 6.10536 14.7348 6 15 6H18V2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Copyright Section -->
+    <div class="footer-bottom">
+        <div class="footer-container">
+            <p>&copy; Copyright 2025 Bali Surf Lesson | All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+    <!-- JavaScript for Mobile Menu -->
+    <script>
+        // Mobile menu toggle functionality
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const navMenu = document.getElementById('nav-menu');
+
+        mobileToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileToggle.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                mobileToggle.classList.remove('active');
+            });
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!mobileToggle.contains(e.target) && !navMenu.contains(e.target)) {
+                navMenu.classList.remove('active');
+                mobileToggle.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>

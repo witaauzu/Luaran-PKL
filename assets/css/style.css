@@ -1,0 +1,1337 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Trip Sans', Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Header Styles */
+.header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 12px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 45px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 35px;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu li {
+    list-style: none;
+}
+
+.nav-menu li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 400;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    position: relative;
+    text-transform: capitalize;
+    display: block;
+    padding: 5px 0;
+}
+
+.nav-menu li a:hover {
+    color: #1E6091;
+}
+
+/* Active menu item */
+.nav-menu li a.active {
+    font-weight: 700;
+    color: #1E6091;
+}
+
+.nav-menu li a.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #1E6091;
+    border-radius: 1px;
+}
+
+/* Contact Button */
+.contact-btn {
+    background-color: #1E6091;
+    color: white !important;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+.contact-btn:hover {
+    background-color: #165080;
+    transform: translateY(-1px);
+    box-shadow: 0 5px 15px rgba(30, 96, 145, 0.3);
+}
+
+/* Mobile Menu Toggle */
+.mobile-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.mobile-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 3px 0;
+    transition: 0.3s;
+    border-radius: 2px;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .header-container {
+        padding: 0 15px;
+    }
+
+    .logo img {
+        height: 35px;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 30px;
+        padding-top: 50px;
+        transition: left 0.3s ease;
+        z-index: 999;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-menu li a {
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+    .mobile-toggle {
+        display: flex;
+    }
+
+    .contact-btn {
+        padding: 10px 20px;
+        font-size: 12px;
+    }
+
+    /* Mobile menu animation */
+    .mobile-toggle.active span:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .mobile-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .mobile-toggle.active span:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+}
+
+@media (max-width: 480px) {
+    .header-container {
+        padding: 0 10px;
+    }
+    
+    .contact-btn {
+        padding: 8px 16px;
+        font-size: 11px;
+    }
+
+    .logo img {
+        height: 30px;
+    }
+}
+/* ========================================
+   FOOTER STYLES - UPDATED LAYOUT
+========================================= */
+
+.footer {
+    margin-top: auto;
+}
+
+/* Main Footer Section */
+.footer-main {
+    background-color: #1E6091;
+    color: white;
+    padding: 50px 0 30px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}
+
+/* Logo Section - Paling Kiri */
+.footer-logo {
+    flex: 0 0 auto;
+}
+
+.footer-logo img {
+    height: 150px;
+    width: auto;
+}
+
+.footer-tagline {
+    font-size: 16px;
+    line-height: 1.6;
+    opacity: 0.9;
+    margin-top: 10px;
+}
+
+/* Content Section - Quick Links + Contact Info berdekatan di kanan */
+.footer-content {
+    display: flex;
+    gap: 120px;
+    align-items: start;
+}
+
+/* Footer Sections */
+.footer-section h4 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: white;
+}
+
+/* Quick Links */
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links li a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    display: block;
+    padding: 2px 0;
+}
+
+.footer-links li a:hover {
+    color: white;
+    padding-left: 5px;
+}
+
+/* Contact Info */
+.contact-info {
+    margin-bottom: 25px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.contact-icon {
+    color: rgba(255, 255, 255, 0.8);
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.contact-item p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Social Media */
+.social-media {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-link {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.social-link svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* Social Media Colors */
+.social-link.whatsapp {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.social-link.whatsapp:hover {
+    background-color: #25D366;
+    border-color: #25D366;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.social-link.instagram {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.social-link.instagram:hover {
+    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+    border-color: #e6683c;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.social-link.facebook {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.social-link.facebook:hover {
+    background-color: #1877F2;
+    border-color: #1877F2;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Copyright Section */
+.footer-bottom {
+    background-color: #E5E1DA;
+    padding: 20px 0;
+}
+
+.footer-bottom .footer-container {
+    display: block;
+    text-align: center;
+}
+
+.footer-bottom p {
+    color: #333;
+    font-size: 14px;
+    margin: 0;
+    font-weight: 500;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .footer-logo img {
+        height: 60px;
+    }
+
+    .contact-item {
+        justify-content: center;
+        text-align: left;
+    }
+
+    .social-media {
+        justify-content: center;
+    }
+
+    .footer-main {
+        padding: 40px 0 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-container {
+        padding: 0 15px;
+    }
+
+    .footer-logo img {
+        height: 50px;
+    }
+
+    .footer-tagline {
+        font-size: 14px;
+    }
+
+    .social-link {
+        width: 40px;
+        height: 40px;
+    }
+
+    .social-link svg {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+/* ========== HERO SECTION ========== */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Full screen */
+  background: url('../images/hero.jpg') center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Konten teks */
+.hero-content {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  padding: 0 20px;
+}
+
+.hero-content h1 {
+  font-size: 70px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 15px;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* Responsif untuk mobile */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  .hero-content p {
+    font-size: 1rem;
+  }
+}
+
+/* === ABOUT US SECTION === */
+.about-us {
+  padding: 80px 0;
+  background: #fff;
+  color: #1E6091; /* semua teks default warna ini */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.about-content {
+  display: flex;
+  justify-content: space-between; /* teks kiri, gambar kanan */
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.about-text {
+  flex: 1;
+  max-width: 600px;
+}
+
+.about-image {
+  flex: 0 0 500px; /* gambar kecil */
+  text-align: right; /* gambar ke kanan */
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* judul kecil ABOUT US */
+.section-label {
+  font-size: 0.9rem;
+  font-weight: 400;
+  letter-spacing: 4px; /* jarak antar huruf */
+  margin-bottom: 10px;
+  color: #1E6091;
+  text-transform: uppercase;
+}
+
+/* judul besar Surf With Bali Surf Lesson */
+.section-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #1E6091;
+}
+
+/* paragraf */
+.about-text p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  color: #1E6091;
+}
+
+/* tombol */
+.about-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #1E6091;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 300;
+}
+
+/* Responsif untuk mobile */
+@media (max-width: 768px) {
+  .about-us-container {
+    flex-direction: column;
+  }
+  .about-us-text,
+  .about-us-image {
+    flex: 1 1 100%;
+  }
+}
+
+.services {
+  background-color: #1E6091;
+  padding: 80px 0;
+  text-align: center;
+}
+
+/* judul kecil OUR SERVICES */
+.section-label-white {
+  font-size: 0.9rem;
+  font-weight: 400;
+  letter-spacing: 4px;
+  margin-bottom: 10px;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+/* judul besar What Makes Us Different */
+.section-title-white {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+/* deskripsi */
+.section-desc-white {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #fff;
+  max-width: 800px;
+  margin: 0 auto 50px auto;
+}
+
+/* cards container */
+.services-cards {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* card */
+.service-card {
+  background: #fff;
+  color: #1E6091;
+  flex: 1 1 calc(25% - 20px);
+  min-width: 220px;
+  padding: 30px 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.service-icon {
+  font-size: rem;
+  margin-bottom: 15px;
+  color: #1E6091;
+}
+
+.service-icon img {
+  width: 80px;       /* ukuran ikon */
+  height: 80px;      /* seragam */
+  object-fit: contain;
+}
+
+.service-card h4 {
+  font-size: 1.2rem;
+  font-weight: 700; /* tebal */
+  margin-bottom: 10px;
+  color: #1E6091;
+}
+
+.service-card p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #1E6091;
+}
+
+/* OUR CLASSES */.our-classes {
+  background-color: #fff;
+  padding: 80px 0;
+  text-align: center;
+}
+
+.our-classes .section-label {
+  font-size: 0.9rem;
+  font-weight: 400;
+  letter-spacing: 4px;
+  margin-bottom: 10px;
+  color: #1E6091;
+  text-transform: uppercase;
+}
+
+.our-classes .section-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #1E6091;
+}
+
+/* Cards Container */
+.our-classes .classes-cards {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Card */
+.our-classes .class-card {
+  background: #fff;
+  border: 1px solid #E5E1DA;
+  border-radius: 12px;
+  flex: 1 1 calc(33.333% - 20px);
+  min-width: 250px;
+  box-sizing: border-box;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 30px 20px 20px;
+}
+
+.our-classes .class-card h4 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #1E6091;
+  text-align: left;
+}
+
+.our-classes .class-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #1E6091;
+  text-align: justify;
+  margin-bottom: 25px;
+}
+
+/* Bungkus gambar */
+.our-classes .class-card .image-wrapper {
+  position: relative;
+  margin-top: auto;
+}
+
+/* Card Image */
+.our-classes .class-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}
+
+/* Circle arrow */
+.our-classes .class-card .circle-arrow {
+  position: absolute;
+  left: 50%;
+  top: -20px; /* setengah ke atas background, setengah ke gambar */
+  transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #1E6091;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  z-index: 2;
+}
+
+/* Responsif */
+@media (max-width: 992px) {
+  .our-classes .classes-cards {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .our-classes .class-card {
+    flex: 1 1 100%;
+  }
+}
+
+/* === COURSES HERO SECTION === */
+.courses-hero {
+  padding: 120px 0 50px; /* ruang atas & bawah */
+  background-color: #fff; /* bisa diganti warna lain kalau mau */
+  text-align: center;
+  color: #1E6091;
+}
+
+/* Label kecil COURSES */
+.courses-hero .section-label {
+  font-size: 0.9rem;
+  font-weight: 400;
+  letter-spacing: 4px; /* jarak antar huruf */
+  margin-bottom: 0;
+  color: #1E6091;
+  text-transform: uppercase;
+}
+
+/* Judul besar Find Your Perfect Surfing Class */
+.courses-hero .section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #1E6091;
+}
+
+/* Paragraf deskripsi */
+.courses-hero .section-desc {
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+  color: #1E6091;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+  .courses-hero .section-title {
+    font-size: 2rem;
+  }
+
+  .courses-hero .section-desc {
+    font-size: 0.95rem;
+    padding: 0 10px;
+  }
+}
+
+/* === Tabs Button === */
+.courses-section {
+  background-color: #1E6091; /* ganti dengan warna biru yang kamu mau */
+  padding: 40px 20px;        /* supaya ada jarak */
+}
+.courses-tabs .tabs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin:0; 
+  flex-wrap: wrap;
+}
+
+.courses-tabs .tab-button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #ECF7FF;
+  color: #1E6091;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 6px 6px 0 0;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.courses-tabs .tab-button.active {
+  background-color: #1E6091; /* biru aktif */
+  color: #fff; /* putih aktif */
+}
+
+/* === Tab Content === */
+.tab-content {
+  display: none;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* === Course Card === */
+.course-card {
+  background: #fff;
+  display: flex;
+  gap: 20px;
+  border-radius: 12px;
+  padding: 30px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.course-card img {
+  width: 350px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.course-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.course-info h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  color: #1E6091;
+}
+
+.course-info p {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  margin-bottom: 20px;
+}
+
+.details .detail-item {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #1E6091;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.details .detail-item i {
+  font-size: 1rem; /* besar ikon */
+  color: #1E6091;
+}
+
+.price-book {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 15px;
+  margin-top: auto
+}
+
+.price-book .price {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1E6091;
+}
+
+.book-btn {
+  display: inline-block;
+  background-color: #1E6091;
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .course-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .course-card img {
+    width: 100%;
+    height: 180px;
+  }
+  .price-book {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
+
+.faq-section {
+  padding: 60px 20px;       /* jarak atas bawah + padding sisi */
+  background-color: #fff;
+}
+
+.faq-container {
+  display: flex;
+  gap: 50px;
+  max-width: 1200px;        /* batas lebar kotak */
+  margin: 0 auto;           /* center kontainer */
+  padding: 0 20px;          /* tambahan agar tidak nempel ke pinggir */
+  flex-wrap: wrap;
+}
+
+/* kiri */
+.faq-left {
+  flex: 1;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* konten ketengah vertikal */
+  align-items: flex-start; /* teks rata kiri */
+}
+
+.faq-left .faq-small {
+  display: block;
+  font-size: 0.9rem;
+  color: #767676;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.faq-left h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #1E6091;
+}
+
+.faq-left p {
+  font-size: 1rem;
+  color: #767676;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.faq-left .faq-btn {
+  display: inline-block;
+  background-color: #1E6091;
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.faq-left .faq-btn:hover {
+  background-color: #14466e;
+}
+
+/* kanan */
+.faq-right {
+  flex: 1;
+  min-width: 280px;
+}
+
+.faq-item {
+  background-color: #ECF7FF;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 15px 20px;
+  text-align: left;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1E6091;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.faq-answer {
+  padding: 0 20px 15px 20px;
+  font-size: 0.95rem;
+  color: #767676;
+  line-height: 1.5;
+  display: none;
+}
+
+.faq-item.open .faq-answer {
+  display: block;
+}
+
+.faq-item.open .faq-icon {
+  transform: rotate(180deg);
+}
+
+/* icon span */
+.faq-icon {
+  font-size: 1rem;
+  transition: transform 0.3s ease;
+}
+
+/* === GALLERY HERO SECTION === */
+.gallery-hero {
+  padding: 120px 0 40px 0; /* ruang atas & bawah */
+  background-color: #fff; /* bisa diganti warna lain kalau mau */
+  text-align: center;
+  color: #1E6091;
+}
+
+/* Label kecil gallery */
+.gallery-hero .section-label {
+  font-size: 0.9rem;
+  font-weight: 400;
+  letter-spacing: 4px; /* jarak antar huruf */
+  margin-bottom: 0;
+  color: #1E6091;
+  text-transform: uppercase;
+}
+
+/* Judul besar */
+.gallery-hero .section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom:10px;
+  color: #1E6091;
+}
+
+/* Paragraf deskripsi */
+.gallery-hero .section-desc {
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+  color: #1E6091;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+  .gallery-hero .section-title {
+    font-size: 2rem;
+  }
+
+  .gallery-hero .section-desc {
+    font-size: 0.95rem;
+    padding: 0 10px;
+  }
+}
+
+.gallery-section {
+  padding:0 0 50px 0;
+  background: white;
+}
+
+/* Container untuk grid */
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 kolom */
+  gap: 10px; /* jarak antar item, kecil */
+  max-width: 1200px; /* opsional biar center */
+  margin: 0 auto;
+  padding: 0 15px; /* opsional padding kanan kiri */
+}
+
+/* Setiap item */
+.gallery-item {
+  position: relative;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.gallery-item img:hover {
+  filter: brightness(0.8); /* 0.8 = agak gelap */
+  transform: scale(1.05);
+}
+
+/* Lightbox */
+.lightbox {
+  display: none; /* hidden default */
+  position: fixed;
+  z-index: 9999;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.9);
+}
+
+.lightbox-content {
+  margin: auto;
+  display: block;
+  max-width: 80%;
+  max-height: 80%;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.lightbox-close:hover {
+  color: #bbb;
+}
+
+/* STORE */
+/* Hero background full width */
+.store-hero {
+  background: url('../images/hero-store.png') no-repeat center center/cover;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 50px; /* sesuaikan dengan navbar/logo */
+  padding-right:0;
+}
+
+/* Konten di kiri */
+.store-content {
+  max-width: 500px;
+  padding:0;
+  border-radius: 10px;
+}
+
+/* Judul */
+.store-content h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #1E6091; /* biru tebal */
+  margin-bottom: 15px;
+}
+
+/* Deskripsi */
+.store-content p {
+  font-size: 1rem;
+  color: #1E6091; /* biru tipis */
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+/* Tombol Explore More */
+.store-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #1E6091;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.store-btn:hover {
+  background-color: #14466e;
+}
+
+.store-btn .arrow {
+  font-size: 1.2rem; /* ukuran panah */
+}
+
+/* STORE FILTER TABS */
+.store-tabs {
+  text-align: center;
+  margin: 40px 0 30px;
+}
+
+.store-tabs ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: inline-flex;
+  gap: 40px;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.store-tabs li {
+  cursor: pointer;
+  color: #6c757d;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.store-tabs li:hover {
+  color: #1E6091;
+}
+
+.store-tabs li.active {
+  color: #1E6091;
+}
+
+.store-tabs li.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 2px;
+  background-color: #1E6091;
+  border-radius: 2px;
+}
+
+/* STORE GRID */
+.store-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 25px;
+  padding: 0 60px 60px;
+}
+
+/* STORE ITEM */
+.store-item {
+  background: #f9f9f9;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  position: relative;
+  transition: transform 0.3s;
+}
+
+.store-item:hover {
+  transform: translateY(-5px);
+}
+
+.store-item img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.store-item h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 10px 0 5px;
+  color: #333;
+}
+
+.store-item p {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #000;
+}
+
+/* BADGE (BUY/RENT) */
+.badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 4px;
+  color: #fff;
+}
+
+.badge.buy {
+  background-color: #1E6091;
+}
+
+.badge.rent {
+  background-color: #B02E2E;
+}
+
