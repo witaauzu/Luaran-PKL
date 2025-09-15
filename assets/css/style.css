@@ -666,7 +666,7 @@ nav {
 .our-classes .section-title {
   font-size: 2.2rem;
   font-weight: 700;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   color: #1E6091;
 }
 
@@ -1334,4 +1334,5 @@ nav {
 .badge.rent {
   background-color: #B02E2E;
 }
+
 
